@@ -25,7 +25,7 @@
                         @csrf
 
                         <div class="form-row">
-                            
+
                             <!-- Nama Lengkap -->
                             <div class="form-group col-md-6">
                                 <label for="name">Nama Lengkap</label>
@@ -92,11 +92,14 @@
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <i class="fal fa-mars"></i>
+                                            <i class="fas fa-mars"></i>
                                         </div>
                                     </div>
                                     <select class="form-control" name="jenis_kelamin" form="biodata-update"
                                         value="{{ $data->jenis_kelamin }}">
+                                        @if ($data->jenis_kelamin == null)
+                                            <option value="" selected hidden disabled>Choose here</option>
+                                        @endif
                                         <option value="Laki Laki">Laki Laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
@@ -148,7 +151,7 @@
                                 </div>
                             </div>
                             <!-- End of No HP -->
-                        
+
                         </div>
                         <!-- End of Form Row -->
 
